@@ -42,18 +42,35 @@ There is impleemnation of CNNs thaat embed the sliding window approach within th
 Instead of making an architecture that each module has to be trained alone like R-CNN, Fast R-CNN is trained as a whole.
 
 ### Steps:
-- use a convolutional network to extract features from the whole image.
-- extract the regions of interest from the feature map and aply them to a fully connected layer to get the feature vector of the region.
-- use a linear softamax classifier to classify each region of interest, and linear regression block to predict the bounding box of the region.
+- Use a convolutional network to extract features from the whole image.
+- Extract the regions of interest from the feature map and aply them to a fully connected layer to get the feature vector of the region.
+- Use a linear softamax classifier to classify each region of interest, and linear regression block to predict the bounding box of the region.
+
+### Disadvantages:
+- The region proposal is still a seperate algorithm from the CNN so it adds more complexity in devloping the model.
 
 <div align='center' display='flex'>
     <img src="./fastrcnn.png">
 </div>
 <center>Fast R-CNN Architecture</center>
  <br/>
+<a href="https://arxiv.org/pdf/1504.08083.pdf">Fast R-CNN Paper</a>
+ <br/>
+ <br/>
+
+
+## Faster R-CNN
+Faster R-CNN is an improvement on Fast R-CNN, it uses the region proposal algorithm inside the CNN itself, so the region proposal is not a seperate algorithm from the CNN, so it reduces the complexity of the model.
+That happens by using a region proposal network that takes the feature map of the image and outputs the regions of interest.
+<!-- netwrk architecture image from the internet -->
+<div align='center' display='flex'>
+    <img src="./faster_rcnn.png">
+</div>
+<center>Faster R-CNN Architecture</center>
  <br/>
  <!-- paper link -->
-<a href="https://arxiv.org/pdf/1504.08083.pdf">Fast R-CNN Paper</a>
-
+<a href="https://arxiv.org/pdf/1506.01497.pdf">Faster R-CNN Paper</a>
+ <br/>
+ <br/>
 
 
