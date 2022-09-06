@@ -1,22 +1,22 @@
 # Detection Techinques
 
 ## Noraml CNNs
-    One of the methods is to train a CNN like VGG or ResNet on datset having both the classifiaction and bounding boxes of the object and the loss function becomes hybrid between the classification problem and the regression problem of the position of hte bounding boxes, the main disadvantage of this method is the the lack of datasets and it's hard to gneralise the model on different secnarios.
+One of the methods is to train a CNN like VGG or ResNet on datset having both the classifiaction and bounding boxes of the object and the loss function becomes hybrid between the classification problem and the regression problem of the position of hte bounding boxes, the main disadvantage of this method is the the lack of datasets and it's hard to gneralise the model on different secnarios.
 
 ## Sliding Windows Approach
-    This approach from its name slides a window over the picture and classifies the window each time, if a certain class probability exceeds a certain threshold then a bounding box is placed, most probably their will be lts of overlapping bounding boxes so algorithms like non-max suppression are used.
+This approach from its name slides a window over the picture and classifies the window each time, if a certain class probability exceeds a certain threshold then a bounding box is placed, most probably their will be lts of overlapping bounding boxes so algorithms like non-max suppression are used.
 ### Main Disadavantages
 - Needs high computational power as each part of the image is classified at least one time.
 - The windows size is a hyperparameter and in the same picture we may need to slide different windows wiith different sizes.
 ### Note
-    There is impleemnation of CNNs thaat embed the sliding window approach within the network itself which makes the process more convenient.
+There is impleemnation of CNNs thaat embed the sliding window approach within the network itself which makes the process more convenient.
 
 <div align='center' display='flex'>
-    <img src="./sliding_windows.png">
+<img src="./sliding_windows.png">
 </div>
 <center>Sliding Window</center>
- <br/>
- <br/>
+<br/>
+<br/>
 
 ## R-CNN
 
@@ -31,15 +31,15 @@
 - A single image takes around 47 second to process using VGG16.
 
 <div align='center' display='flex'>
-    <img src="./rcnn.png">
+<img src="./rcnn.png">
 </div>
 
 <center>RCNN Architecture</center>
- <br/>
- <br/>
+<br/>
+<br/>
 
 ## Fast R-CNN
-    Instead of making an architecture that each module has to be trained alone like R-CNN, Fast R-CNN is trained as a whole.
+Instead of making an architecture that each module has to be trained alone like R-CNN, Fast R-CNN is trained as a whole.
 
 ### Steps:
 - Use a convolutional network to extract features from the whole image.
@@ -50,43 +50,43 @@
 - The region proposal is still a seperate algorithm from the CNN so it adds more complexity in devloping the model.
 
 <div align='center' display='flex'>
-    <img src="./fastrcnn.png">
+<img src="./fastrcnn.png">
 </div>
 <center>Fast R-CNN Architecture</center>
- <br/>
+<br/>
 <a href="https://arxiv.org/pdf/1504.08083.pdf">Fast R-CNN Paper</a>
- <br/>
- <br/>
+<br/>
+<br/>
 
 
 ## Faster R-CNN
-    Faster R-CNN is an improvement on Fast R-CNN, it uses the region proposal algorithm inside the CNN itself, so the region proposal is not a seperate algorithm from the CNN, so it reduces the complexity of the model.
-    That happens by using a region proposal network that takes the feature map of the image and outputs the regions of interest.
+Faster R-CNN is an improvement on Fast R-CNN, it uses the region proposal algorithm inside the CNN itself, so the region proposal is not a seperate algorithm from the CNN, so it reduces the complexity of the model.
+That happens by using a region proposal network that takes the feature map of the image and outputs the regions of interest.
 <!-- netwrk architecture image from the internet -->
 <div align='center' display='flex'>
-    <img src="./faster_rcnn.png">
+<img src="./faster_rcnn.png">
 </div>
 <center>Faster R-CNN Architecture</center>
- <br/>
- <!-- paper link -->
+<br/>
+<!-- paper link -->
 <a href="https://arxiv.org/pdf/1506.01497.pdf">Faster R-CNN Paper</a>
- <br/>
- <br/>
+<br/>
+<br/>
 
- ## YOLO (You Only Look Once)
-    YOLO is a real-time object detection algorithm, it is a single stage detector which means it does the region proposal and the classification in one step.
-    It uses a CNN to extract features from the image and then uses a fully connected layer to get the feature vector of the region, then it uses a linear softmax classifier to classify the region and a linear regression block to predict the bounding box of the region.
-    The main advantage of YOLO is that it is a single stage detector so it is faster than Faster R-CNN and it is real-time.
-    The main disadvantage of YOLO is that it is not as accurate as Faster R-CNN.
-    Yolo is mainly faster as it converted the problem of bounding box regression to a classification problem.
+## YOLO (You Only Look Once)
+YOLO is a real-time object detection algorithm, it is a single stage detector which means it does the region proposal and the classification in one step.
+It uses a CNN to extract features from the image and then uses a fully connected layer to get the feature vector of the region, then it uses a linear softmax classifier to classify the region and a linear regression block to predict the bounding box of the region.
+The main advantage of YOLO is that it is a single stage detector so it is faster than Faster R-CNN and it is real-time.
+The main disadvantage of YOLO is that it is not as accurate as Faster R-CNN.
+Yolo is mainly faster as it converted the problem of bounding box regression to a classification problem.
 <!-- link to paper -->
 <!-- image of yolo_explanation -->
 <div align='center' display='flex'>
-    <img src="./yolo_explanation.png">
+<img src="./yolo_explanation.png">
 </div>
 <center>YOLO Explanation</center>
 <a href="https://arxiv.org/pdf/1506.02640.pdf">YOLO Paper</a>
- <br/>
+<br/>
 <a href="https://www.youtube.com/watch?v=NM6lrxy0bxs&t=312s&ab_channel=ComputerVisionFoundationVideos">YOLO Announcement Video and Explanation</a>
- <br/>
- <br/>
+<br/>
+<br/>
