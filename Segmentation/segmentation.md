@@ -2,8 +2,11 @@
 
 
 ## Full Convolutional Semantic Segmentation Networks
+### Example:
+    -SegNet
+    -U-Net
 
-The main idea of this approach is to use a CNN to keep reducing the size of thhe image b convolutions and doown sampling layes until the image reaches a downsampled size but each pixel is classified and then upsample the image again. At the end we will be having an image where each pixel is classified and at the same time the forward pass in this CNN is not Computationally expensive.
+The main idea of this approach is to use a CNN to keep reducing the size of the image by convolutions and down sampling layes until the image reaches a downsampled size but each pixel is classified and then upsample the image again. At the end we will be having an image where each pixel is classified and at the same time the forward pass in this CNN is not Computationally expensive.
 <!-- image -->
 <div align='center' display='flex'>
     <img src="./semanticSegmentation.png">
@@ -32,6 +35,9 @@ To sum it up, after the RCNN puts bounnding boxes around the objects, the mini s
 <a href="https://arxiv.org/pdf/1703.06870.pdf">Mask R-CNN Paper</a>
     <br/>
     <br/>
+
+
+## U-Net (Sementic Segmentation)
 
 transformers is a
 maskfor
