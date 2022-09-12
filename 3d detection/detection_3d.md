@@ -8,5 +8,23 @@
 
 ## Lidar Technqiues
 - Voxelise the point cloud and then used 3D CNN based methods to detect the objects.
-- Use PointNet based methods to detect the objects and use GNN with it, like PointNet++.
+- Use PointNet based methods to detect the objects and use GNN with it, like PointNet. Pointnet is more robust when there are missing points in the point cloud, as it depends on only the critical points that defines the shape of the object, unlike 3D CNNs that depend on all the points.
 - Combine the last 2 methods for better results, like PV-RCNN.
+<!-- image -->
+<div align='center' display='flex'>
+    <img src="./robustPointnet.png">
+</div>
+<!-- image caption -->
+<center>Robustness Graph</center>
+ <br/>
+<!-- criticalpoints image -->
+<div align='center' display='flex'>
+    <img src="./criticalPoints.png">
+</div>
+<center>Critical Points</center>
+ <br/>
+ <br/>
+<!-- point net paper link -->
+
+[PointNet Paper](https://arxiv.org/pdf/1612.00593.pdf)
+
